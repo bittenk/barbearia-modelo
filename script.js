@@ -58,7 +58,7 @@ const observer = new IntersectionObserver(function(entries) {
             entry.target.style.transform = "translateY(30px)";
             
             setTimeout(() => {
-                entry.target.style.transition = "all 0.6s ease";
+                entry.target.style.transition = "all 1s ease";
                 entry.target.style.opacity = "1";
                 entry.target.style.transform = "translateY(0)";
             }, 100);

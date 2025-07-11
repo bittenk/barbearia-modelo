@@ -13,20 +13,20 @@
     --text-light: #242323;
     --brown: #795238;
     --bg-light: #AEA7A3;
-    --white: #FFFFFF;
+    --white-color: #FFFFFF;
 }
 
 /* Estilos Base */
 body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
-    color: var( --secondary-color);
+    color: var(--secondary-color);
 }
 
 /* ===== HEADER ===== */
 header {
-    background: var(--white);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    background: var(--primary-color);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     position: fixed;
     width: 100%;
     top: 0;
@@ -38,31 +38,39 @@ nav {
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
-    padding: 1rem;
+    padding: 20px;
+
 }
 
-.logo {
-    font-size: 1.8rem;
-    font-weight: 700;
-    
-    text-decoration: none;
+.logo-tipo {
+    width: 150px;
+    height: 150px;
+    border: 2px solid #000000;
+    border-radius: 80px;
 }
+
 
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 3rem;
+    font-size: 2rem;
+    margin-right: 50px;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: var(--text-dark);
-    font-weight: 500;
+    color: var(--text-light);
+    font-weight: 600;
     transition: color 0.3s;
 }
 
 .nav-links a:hover {
-    color: var(--primary-color);
+    color: var(--brown);
+}
+
+.nav-links a:active {
+    color: var(--bg-light);
 }
 
 .menu-toggle {
@@ -73,25 +81,28 @@ nav {
 
 /* ===== HERO SECTION ===== */
 .hero {
-    background: linear-gradient(135deg, var(--bg-light) 0%, var(--secondary-color) 100%);
-    padding: 120px 5% 80px;
+    background: linear-gradient(135deg, var(--bg-light) 0%,
+            var(--text-light) 100%);
+    padding: 200px 30% 70px;
     text-align: center;
 }
 
 .hero-content {
-    max-width: 800px;
-    margin: 0 auto;
+    max-width: 900px;
+    margin: 40px auto;
 }
 
 .hero h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     margin-bottom: 1rem;
-    color: var(--text-dark);
-    animation: fadeInUp 1s ease;
+    color: var(--white-color);
+    animation: fadeInUp 2s ease;
 }
 
 .hero p {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+    font-style: italic;
+    font-weight: 500;
     margin-bottom: 2rem;
     color: var(--text-light);
     animation: fadeInUp 1s ease 0.2s;
@@ -100,21 +111,29 @@ nav {
 
 .cta-button {
     display: inline-block;
-    background: var(--primary-color);
-    color: var(--white);
-    padding: 15px 40px;
+    background: var(--brown);
+    color: var(--bg-light);
+    padding: 20px 40px;
     border-radius: 50px;
     text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s;
-    animation: fadeInUp 1s ease 0.4s;
+    font-weight: 500;
+    font-size: 1.4rem;
+    transition: all 1s;
+    animation: fadeInUp 1s ease 0.5s;
     animation-fill-mode: both;
-    box-shadow: 0 4px 15px rgba(233, 30, 99, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
 }
 
 .cta-button:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(233, 30, 99, 0.4);
+    box-shadow: 0 15px 50px rgba(63, 60, 61, 0.4);
+}
+
+.cta-button:active {
+    background-color: var(--primary-color);
+    color: var(--brown);
+    border: 7px solid var(--brown);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
 }
 
 /* ===== ANIMAÇÕES ===== */
@@ -123,6 +142,7 @@ nav {
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -131,12 +151,17 @@ nav {
 
 /* ===== SERVICES SECTION ===== */
 .services {
-    padding: 80px 5%;
-    background: var(--white);
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./img/img.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 20px;
+    height: 70rem;
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1100px;
+    height: 1000px;
     margin: 0 auto;
 }
 
@@ -144,38 +169,40 @@ nav {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 3rem;
-    color: var(--text-dark);
+    color: var(--white-color);
 }
 
 .services-grid {
     display: grid;
+    height: 900px;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
 }
 
 .service-card {
-    background: var(--bg-light);
+    background: var(--brown);
     padding: 2rem;
-    border-radius: 15px;
+    border-radius: 50px;
     text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 1s, box-shadow 1s;
+    cursor: pointer;
 }
 
 .service-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .service-icon {
     font-size: 3rem;
-    color: var(--primary-color);
+    color: var(--white-color);
     margin-bottom: 1rem;
 }
 
 .service-card h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    color: var(--text-dark);
+    color: var(--white-color);
 }
 
 .service-card p {
@@ -199,7 +226,7 @@ nav {
     background: var(--white);
     padding: 2rem;
     border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
 }
 
 .stars {
@@ -333,7 +360,7 @@ footer {
     justify-content: center;
     text-decoration: none;
     font-size: 2rem;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
     z-index: 999;
     transition: all 0.3s;
 }
@@ -354,7 +381,7 @@ footer {
         width: 100%;
         text-align: center;
         transition: 0.3s;
-        box-shadow: 0 10px 27px rgba(0,0,0,0.05);
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
         padding: 2rem 0;
     }
 
@@ -386,16 +413,16 @@ footer {
     .cta-content {
         padding: 0 20px;
     }
-    
+
     .whatsapp-button {
         padding: 15px 30px;
         font-size: 1rem;
     }
-    
+
     .contact-info {
         gap: 2rem;
     }
-    
+
     .info-item {
         font-size: 0.9rem;
     }
